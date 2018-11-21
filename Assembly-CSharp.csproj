@@ -62,6 +62,7 @@
      <Compile Include="Assets\EzySlice\SlicedHull.cs" />
      <Compile Include="Assets\EzySlice\Slicer.cs" />
      <Compile Include="Assets\EzySlice\SlicerExtensions.cs" />
+     <Compile Include="Assets\MnKPlayerController.cs" />
      <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
      <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
      <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />
@@ -257,6 +258,7 @@
      <Compile Include="Assets\Oculus\VoiceMod\Scripts\Helpers\OVRMicInput.cs" />
      <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceMod.cs" />
      <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceModContext.cs" />
+     <Compile Include="Assets\PlayerSelect.cs" />
      <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarMaterialStateShader.cginc" />
      <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_PC_SingleComponent.shader" />
      <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_Loader.shader" />
