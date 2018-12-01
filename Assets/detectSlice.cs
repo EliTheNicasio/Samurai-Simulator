@@ -5,7 +5,9 @@ using EzySlice;
 
 public class detectSlice : MonoBehaviour {
 
-	public GameObject sphere;
+	public GameObject cube;
+
+	int iterations;
 
 	Vector3 planeBegin;
 	Vector3 planeMid;
@@ -13,7 +15,7 @@ public class detectSlice : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		iterations = 0;
 	}
 	
 	// Update is called once per frame
@@ -24,8 +26,7 @@ public class detectSlice : MonoBehaviour {
 	private void OnCollisionEnter(Collision collision)
 	{
 		planeBegin = collision.contacts [0].point;
-		// Physics.IgnoreLayerCollision(0, 8);
-		print (planeBegin);
+		//print(collision.gameObject.name);
 	}
 
 	private void OnCollisionStay(Collision collision)
@@ -33,8 +34,10 @@ public class detectSlice : MonoBehaviour {
 		if (collision.contacts.Length >= 3) {
 			planeMid = collision.contacts [collision.contacts.Length - 2].point;
 			planeEnd = collision.contacts [collision.contacts.Length - 1].point;
-			//print (planeMid);
-			cutThing();
+
+			if (collision.gameObject.name == "Sword") {
+				cutThing ();
+			}
 		}
 	}
 
@@ -47,16 +50,22 @@ public class detectSlice : MonoBehaviour {
 	{
 		Vector3 norm = Vector3.Cross (planeBegin - planeMid, planeEnd - planeMid);
 
-		GameObject[] hulls = sphere.SliceInstantiate (planeEnd, norm);
+		GameObject[] hulls = cube.SliceInstantiate (planeEnd, norm);
 
 		if (hulls != null) {
 			for (int i = 0; i < 2; i++) {
 				hulls [i].AddComponent<MeshCollider> ().convex = true;
 				hulls [i].AddComponent<Rigidbody> ();
-				//hulls [i].AddComponent <detectSlice>();
-			//	hulls [i].GetComponent<detectSlice> ().sphere = hulls [i];
+
+				// This lets object be slice multiple times. Not working as of right now, will fix (hopefully)
+				/*if(iterations < 2)
+				{
+					hulls [i].AddComponent <detectSlice>();
+					hulls [i].GetComponent<detectSlice> ().iterations = this.iterations + 1;
+					hulls [i].GetComponent<detectSlice> ().cube = hulls [i];
+				}*/
 			}
-			Destroy (sphere);
+			Destroy (cube);
 		}
 
 
