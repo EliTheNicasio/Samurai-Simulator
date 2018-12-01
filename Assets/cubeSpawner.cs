@@ -6,30 +6,42 @@ public class cubeSpawner : MonoBehaviour {
 
 	public GameObject cube;
 
-	LinkedList<GameObject> cubes;
+	public AudioClip spawnSound;
 
-	float t;
+	Queue<GameObject> cubeClones;
+
+	float t, tCube;
 
 	// Use this for initialization
 	void Start () {
 		t = 0f;
+		cubeClones = new Queue<GameObject> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		t += Time.deltaTime;
 
-		if (t >= 5.0f) 
+		if (t >= 2.0f) 
 		{
+			Vector2 pos2D = Random.insideUnitCircle;
+			Vector3 pos = new Vector3( pos2D.x * 2, 0, pos2D.y * 2);
+
 			GameObject clone;
-			clone = (GameObject) Instantiate (cube, new Vector3 (.5f, .1f, .5f), Quaternion.identity);
-			clone.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, 15f, 0f);
-			cubes.AddLast (clone);
-		//	cubes.Last.Value.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, 15f, 0f);
-		//	print (cubes.Last.Value.GetComponent<Rigidbody> ().velocity);
-			print("test");
+
+			clone = (GameObject) Instantiate (cube, pos, Quaternion.identity);
+			clone.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, 6f, 0f) - pos;
+
+			cubeClones.Enqueue (clone);
+
+			AudioSource.PlayClipAtPoint (spawnSound, pos);
+
 			t = 0f;
 		}
-		//print ("test2");
+		if (cubeClones.Count != 0) {
+			if (cubeClones.Peek ().GetComponent<detectSlice> ().t >= 2.5f) {
+				Destroy (cubeClones.Dequeue ());
+			}
+		}
 	}
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 287564848}
   - component: {fileID: 287564847}
   m_Layer: 0
-  m_Name: PlayerSelect
+  m_Name: PlayerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camRig: {fileID: 797576201}
   MnKCam: {fileID: 1478826396}
+  sword: {fileID: 410537458}
 --- !u!4 &287564848
 Transform:
   m_ObjectHideFlags: 0
@@ -350,7 +351,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 410537458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.76, z: 0.01}
+  m_LocalPosition: {x: -3.982, y: 0.76, z: 0.01}
   m_LocalScale: {x: 0.010000002, y: 0.009999998, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
@@ -485,7 +486,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.011
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -628,7 +629,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 907368302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.518, y: 1.3273827, z: 0.281}
+  m_LocalPosition: {x: -0.518, y: 0, z: 1}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
@@ -661,6 +662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 0}
+  swordSlash: {fileID: 0}
+  t: 0
 --- !u!1 &1047547666
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +698,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61496e9771f288a4faeb0568f9b382ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -741,7 +744,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1047547666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3890686, y: 0.1928604, z: -0.6082281}
+  m_LocalPosition: {x: 3.337, y: 1.09, z: -0.6082281}
   m_LocalScale: {x: 0.21, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -774,6 +777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 1047547666}
+  swordSlash: {fileID: 8300000, guid: 2f879e1448e25d14d8943e68cfd75ab1, type: 3}
+  t: 0
 --- !u!1 &1117641709 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 134650, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
@@ -856,6 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 1047547666}
+  spawnSound: {fileID: 8300000, guid: cfc6cef72639b6648a5894e12c1e40dc, type: 3}
 --- !u!4 &1292431894
 Transform:
   m_ObjectHideFlags: 0

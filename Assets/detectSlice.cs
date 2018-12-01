@@ -7,20 +7,25 @@ public class detectSlice : MonoBehaviour {
 
 	public GameObject cube;
 
+	public AudioClip swordSlash;
+
 	int iterations;
 
 	Vector3 planeBegin;
 	Vector3 planeMid;
 	Vector3 planeEnd;
 
+	public float t;
+
 	// Use this for initialization
 	void Start () {
 		iterations = 0;
+		t = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		t += Time.deltaTime;
 	}
 
 	private void OnCollisionEnter(Collision collision)
@@ -57,6 +62,11 @@ public class detectSlice : MonoBehaviour {
 				hulls [i].AddComponent<MeshCollider> ().convex = true;
 				hulls [i].AddComponent<Rigidbody> ();
 
+				hulls [i].AddComponent<hullTimer> ();
+				hulls [i].AddComponent<hullTimer> ().hull = hulls [i];
+
+				AudioSource.PlayClipAtPoint (swordSlash, cube.transform.position);
+
 				// This lets object be slice multiple times. Not working as of right now, will fix (hopefully)
 				/*if(iterations < 2)
 				{
@@ -65,7 +75,7 @@ public class detectSlice : MonoBehaviour {
 					hulls [i].GetComponent<detectSlice> ().cube = hulls [i];
 				}*/
 			}
-			Destroy (cube);
+			GetComponent<Renderer> ().enabled = false;
 		}
 
 
