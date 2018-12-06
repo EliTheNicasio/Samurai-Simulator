@@ -75,7 +75,8 @@ public class detectSlice : MonoBehaviour {
 					hulls [i].GetComponent<detectSlice> ().cube = hulls [i];
 				}*/
 			}
-			GetComponent<Renderer> ().enabled = false;
+			//GetComponent<Renderer> ().enabled = false;
+			Destroy(cube);
 		}
 
 
