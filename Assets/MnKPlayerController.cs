@@ -30,7 +30,10 @@ public class MnKPlayerController : MonoBehaviour {
 		if (cam.enabled) {
 			float xAxisValue = Input.GetAxis ("Horizontal");
 			float zAxisValue = Input.GetAxis ("Vertical");
-			this.transform.Translate (new Vector3 (.1f * xAxisValue, 0.0f, .1f * zAxisValue));
+
+			float yAxisValue = Input.GetAxis("Y-axis");
+
+			this.transform.Translate (new Vector3 (.1f * xAxisValue, .1f * yAxisValue, .1f * zAxisValue));
 
 			float mouseX = Input.GetAxis("Mouse X");
 			float mouseY = -Input.GetAxis("Mouse Y");

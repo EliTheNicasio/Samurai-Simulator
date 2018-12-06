@@ -11,11 +11,9 @@ public class detectSlice : MonoBehaviour {
 
 	int iterations;
 
-	Vector3 planeBegin;
-	Vector3 planeMid;
-	Vector3 planeEnd;
-
 	public float t;
+
+	GameObject slicePlane;
 
 	// Use this for initialization
 	void Start () {
@@ -30,20 +28,26 @@ public class detectSlice : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		planeBegin = collision.contacts [0].point;
-		//print(collision.gameObject.name);
+		print (collision.gameObject.name);
+		if (collision.gameObject.name == "Sword") {
+
+			GameObject sword = collision.gameObject;
+			slicePlane = sword.transform.GetChild (0).gameObject;
+
+			cutThing ();
+		}
 	}
 
 	private void OnCollisionStay(Collision collision)
 	{
-		if (collision.contacts.Length >= 3) {
+		/*if (collision.contacts.Length >= 3) {
 			planeMid = collision.contacts [collision.contacts.Length - 2].point;
 			planeEnd = collision.contacts [collision.contacts.Length - 1].point;
 
 			if (collision.gameObject.name == "Sword") {
 				cutThing ();
 			}
-		}
+		}*/
 	}
 
 	private void OnCollisionExit(Collision collision)
@@ -53,9 +57,8 @@ public class detectSlice : MonoBehaviour {
 
 	private void cutThing()
 	{
-		Vector3 norm = Vector3.Cross (planeBegin - planeMid, planeEnd - planeMid);
-
-		GameObject[] hulls = cube.SliceInstantiate (planeEnd, norm);
+		//GameObject[] hulls = cube.SliceInstantiate (planeEnd, norm);
+		GameObject[] hulls = cube.SliceInstantiate 	(slicePlane.transform.position, slicePlane.transform.up);
 
 		if (hulls != null) {
 			for (int i = 0; i < 2; i++) {
