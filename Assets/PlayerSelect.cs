@@ -9,9 +9,12 @@ public class PlayerSelect : MonoBehaviour {
 
 	public GameObject sword;
 
+	bool firstPress;
+
 	// Use this for initialization
 	void Start () {
 		MnKCam.enabled = false;
+		firstPress = true;
 	}
 	
 	// Update is called once per frame
@@ -21,9 +24,15 @@ public class PlayerSelect : MonoBehaviour {
 			MnKCam.enabled = !MnKCam.enabled;
 		}
 		if (OVRInput.Get (OVRInput.Button.Three)) {
+			
+		/*	if(firstPress){
+				sword.GetComponent<Rigidbody> ().useGravity = true;
+				sword.GetComponent<Rigidbody> ().isKinematic = false;
+				firstPress = false;
+			}*/
 
 			Vector3 pos = sword.transform.position;
-			sword.GetComponent<Rigidbody> ().velocity = new Vector3(-1.5f * pos.x, 0, -1.5f * pos.z);
+			sword.GetComponent<Rigidbody> ().velocity = new Vector3(-1.5f * pos.x, 5 - 1.5f * pos.y, -1.5f * pos.z);
 		}
 	}
 }

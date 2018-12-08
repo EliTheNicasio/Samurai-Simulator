@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using EzySlice;
 
 public class detectSlice : MonoBehaviour {
@@ -12,6 +13,8 @@ public class detectSlice : MonoBehaviour {
 	int iterations;
 
 	public float t;
+
+	public Text score;
 
 	GameObject slicePlane;
 
@@ -79,7 +82,10 @@ public class detectSlice : MonoBehaviour {
 				}*/
 			}
 			//GetComponent<Renderer> ().enabled = false;
+
 			Destroy(cube);
+
+			score.GetComponent<HighScore> ().score += 1;
 		}
 
 
