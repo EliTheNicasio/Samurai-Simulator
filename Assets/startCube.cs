@@ -6,6 +6,8 @@ public class startCube : MonoBehaviour {
 
 	public GameObject timer;
 
+	public AudioClip startSound;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,6 +20,7 @@ public class startCube : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
 	{
+		AudioSource.PlayClipAtPoint (startSound, transform.position);
 		timer.GetComponent<Timer> ().gameStarted = true;
 	}
 }

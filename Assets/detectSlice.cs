@@ -31,7 +31,7 @@ public class detectSlice : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		print (collision.gameObject.name);
+		//print (collision.gameObject.name);
 		if (collision.gameObject.name == "Sword") {
 
 			GameObject sword = collision.gameObject;
