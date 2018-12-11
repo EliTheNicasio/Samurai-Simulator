@@ -3456,6 +3456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camRig: {fileID: 1401593830}
   MnKCam: {fileID: 1534881421}
+  timer: {fileID: 684890032}
   sword: {fileID: 803016690}
 --- !u!4 &1046714028
 Transform:

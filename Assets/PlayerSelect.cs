@@ -7,6 +7,8 @@ public class PlayerSelect : MonoBehaviour {
 	public GameObject camRig;
 	public Camera MnKCam;
 
+	public GameObject timer;
+
 	public GameObject sword;
 
 	bool firstPress;
@@ -23,6 +25,11 @@ public class PlayerSelect : MonoBehaviour {
 			camRig.GetComponent<OVRCameraRig> ().enabled = !camRig.GetComponent<OVRCameraRig> ().enabled;
 			MnKCam.enabled = !MnKCam.enabled;
 		}
+
+		if (Input.GetKeyDown ("o")) {
+			timer.GetComponent<Timer> ().gameStarted = true;
+		}
+
 		if (OVRInput.Get (OVRInput.Button.Three)) {
 			
 		/*	if(firstPress){

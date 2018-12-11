@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cubeSpawner : MonoBehaviour {
 
-	const int NUM_OF_SEQ = 5;
+	const int NUM_OF_SEQ = 6;
 	const float CUBE_SPAWN_HEIGHT = 5.5f;
 
 	public GameObject cube;
@@ -28,7 +28,7 @@ public class cubeSpawner : MonoBehaviour {
 		actionT = 0f;
 		cubeClones = new LinkedList<GameObject> ();
 		//seqNum = Random.Range (0, NUM_OF_SEQ);
-		seqNum = 4;
+		seqNum = 5;
 		ind = 0;
 	}
 
@@ -224,6 +224,40 @@ public class cubeSpawner : MonoBehaviour {
 					return toReturn;
 			} else {
 				return 4;
+			}
+			break;
+
+		case 5:
+			if (t < .15f) {
+				pos2D = Random.insideUnitCircle.normalized;
+
+				ind = -5;	
+			}
+			if (actionT > .15f) {
+
+				Vector3 pos;
+
+				pos = new Vector3 (pos2D.x * 4 * (ind / 5), 2, pos2D.y * 4 * (ind / 5));
+
+				GameObject clone;
+
+				clone = (GameObject)Instantiate (cube, pos, Quaternion.identity);
+				clone.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, CUBE_SPAWN_HEIGHT, 0f) - pos;
+
+				cubeClones.AddLast (clone);
+
+				AudioSource.PlayClipAtPoint (spawnSound, pos);
+
+				ind++;
+
+				actionT = 0;
+			}
+
+			if (t > 1.5f) {
+				t = 0f;
+				return 4;
+			} else {
+				return 5;
 			}
 			break;
 		}

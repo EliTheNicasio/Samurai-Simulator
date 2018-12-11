@@ -10,6 +10,8 @@ public class detectSlice : MonoBehaviour {
 
 	public AudioClip swordSlash;
 
+	public GameObject spark;
+
 	int iterations;
 
 	public float t;
@@ -63,6 +65,7 @@ public class detectSlice : MonoBehaviour {
 		//GameObject[] hulls = cube.SliceInstantiate (planeEnd, norm);
 		GameObject[] hulls = cube.SliceInstantiate 	(slicePlane.transform.position, slicePlane.transform.up);
 
+
 		if (hulls != null) {
 			for (int i = 0; i < 2; i++) {
 				hulls [i].AddComponent<MeshCollider> ().convex = true;
@@ -85,7 +88,7 @@ public class detectSlice : MonoBehaviour {
 
 			Destroy(cube);
 
-			score.GetComponent<HighScore> ().score += 1;
+			score.GetComponent<HighScore> ().score += 10;
 		}
 
 
