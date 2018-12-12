@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cubeSpawner : MonoBehaviour {
 
-	const int NUM_OF_SEQ = 6;
+	const int NUM_OF_SEQ = 5;
 	const float CUBE_SPAWN_HEIGHT = 5.5f;
 
 	public GameObject cube;
@@ -27,8 +27,8 @@ public class cubeSpawner : MonoBehaviour {
 		t = 0f;
 		actionT = 0f;
 		cubeClones = new LinkedList<GameObject> ();
-		//seqNum = Random.Range (0, NUM_OF_SEQ);
-		seqNum = 5;
+		seqNum = Random.Range (0, NUM_OF_SEQ);
+		//seqNum = 5;
 		ind = 0;
 	}
 
@@ -92,6 +92,7 @@ public class cubeSpawner : MonoBehaviour {
 
 				clone = (GameObject)Instantiate (cube, pos, Quaternion.identity);
 				clone.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, CUBE_SPAWN_HEIGHT, 0f) - pos;
+				clone.GetComponent<detectSlice> ().seqNum = 0;
 
 				cubeClones.AddLast (clone);
 
@@ -130,6 +131,7 @@ public class cubeSpawner : MonoBehaviour {
 
 				clone = (GameObject)Instantiate (cube, pos, Quaternion.identity);
 				clone.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, CUBE_SPAWN_HEIGHT, 0f) - pos;
+				clone.GetComponent<detectSlice> ().seqNum = 1;
 
 				cubeClones.AddLast (clone);
 
@@ -162,6 +164,7 @@ public class cubeSpawner : MonoBehaviour {
 
 					clone = (GameObject)Instantiate (cube, pos, Quaternion.identity);
 					clone.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, CUBE_SPAWN_HEIGHT + .5f, 0f) - pos;
+					clone.GetComponent<detectSlice> ().seqNum = 2;
 
 					cubeClones.AddLast (clone);
 
@@ -196,6 +199,7 @@ public class cubeSpawner : MonoBehaviour {
 
 				clone = (GameObject)Instantiate (cube, pos, Quaternion.identity);
 				clone.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, CUBE_SPAWN_HEIGHT, 0f) - pos;
+				clone.GetComponent<detectSlice> ().seqNum = 3;
 
 				cubeClones.AddLast (clone);
 
@@ -217,6 +221,7 @@ public class cubeSpawner : MonoBehaviour {
 		case 4:
 			if (t > 2.0f) {
 				t = 0f;
+				actionT = 0f;
 				int toReturn = Random.Range (0, NUM_OF_SEQ);
 				if (toReturn == 4)
 					return 0;
@@ -243,6 +248,7 @@ public class cubeSpawner : MonoBehaviour {
 
 				clone = (GameObject)Instantiate (cube, pos, Quaternion.identity);
 				clone.GetComponent<Rigidbody> ().velocity = new Vector3 (0f, CUBE_SPAWN_HEIGHT, 0f) - pos;
+				clone.GetComponent<detectSlice> ().seqNum = 5;
 
 				cubeClones.AddLast (clone);
 

@@ -1,12 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerSelect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\detectSlice.cs">
     <Files>
-      <File FileName="Assets\Timer.cs" Line="10" Column="19" />
+      <File FileName="Assets\Timer.cs" Line="1" Column="1" />
       <File FileName="Assets\startCube.cs" Line="23" Column="64" />
-      <File FileName="Assets\cubeSpawner.cs" Line="240" Column="50" />
+      <File FileName="Assets\cubeSpawner.cs" Line="251" Column="50" />
       <File FileName="Assets\PlayerSelect.cs" Line="30" Column="52" />
-      <File FileName="Assets\detectSlice.cs" Line="67" Column="3" />
+      <File FileName="Assets\detectSlice.cs" Line="17" Column="13" />
+      <File FileName="Assets\HighScore.cs" Line="16" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

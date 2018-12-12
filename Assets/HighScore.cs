@@ -8,10 +8,12 @@ public class HighScore : MonoBehaviour {
 	public Text gameText;
 
 	public int score;
+	public int multiplier;
 
 	// Use this for initialization
 	void Start () {
 		score = 0;
+		multiplier = 1;
 	}
 	
 	// Update is called once per frame

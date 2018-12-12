@@ -14,6 +14,8 @@ public class detectSlice : MonoBehaviour {
 
 	int iterations;
 
+	public int seqNum;
+
 	public float t;
 
 	public Text score;
@@ -88,7 +90,7 @@ public class detectSlice : MonoBehaviour {
 
 			Destroy(cube);
 
-			score.GetComponent<HighScore> ().score += 10;
+			score.GetComponent<HighScore> ().score += 10 * score.GetComponent<HighScore> ().multiplier;
 		}
 
 
