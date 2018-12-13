@@ -4903,6 +4903,7 @@ MonoBehaviour:
   cube: {fileID: 1706035520}
   swordSlash: {fileID: 8300000, guid: 2f879e1448e25d14d8943e68cfd75ab1, type: 3}
   spark: {fileID: 0}
+  sliced: 0
   seqNum: 0
   t: 0
   score: {fileID: 773319692}
@@ -5177,6 +5178,7 @@ MonoBehaviour:
   cube: {fileID: 1858946767}
   swordSlash: {fileID: 8300000, guid: 2f879e1448e25d14d8943e68cfd75ab1, type: 3}
   spark: {fileID: 0}
+  sliced: 0
   seqNum: 0
   t: 0
   score: {fileID: 773319692}
@@ -5373,6 +5375,7 @@ MonoBehaviour:
   cube: {fileID: 1885861946}
   swordSlash: {fileID: 8300000, guid: 2f879e1448e25d14d8943e68cfd75ab1, type: 3}
   spark: {fileID: 0}
+  sliced: 0
   seqNum: 0
   t: 0
   score: {fileID: 773319692}
@@ -5455,6 +5458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 684890032}
+  cube: {fileID: 1885861946}
   score: {fileID: 773319692}
   startSound: {fileID: 8300000, guid: d2328c497726ee14db6514576a4549f4, type: 3}
 --- !u!1 &1942702470

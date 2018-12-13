@@ -12,6 +12,8 @@ public class detectSlice : MonoBehaviour {
 
 	public GameObject spark;
 
+	public bool sliced;
+
 	int iterations;
 
 	public int seqNum;
@@ -26,6 +28,8 @@ public class detectSlice : MonoBehaviour {
 	void Start () {
 		iterations = 0;
 		t = 0f;
+
+		sliced = false;
 	}
 	
 	// Update is called once per frame
@@ -87,6 +91,8 @@ public class detectSlice : MonoBehaviour {
 				}*/
 			}
 			//GetComponent<Renderer> ().enabled = false;
+
+			sliced = true;
 
 			Destroy(cube);
 

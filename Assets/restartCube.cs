@@ -9,8 +9,11 @@ public class restartCube : MonoBehaviour {
 	public GameObject timer;
 	public Text score;
 
+	bool isSliced;
+
 	// Use this for initialization
 	void Start () {
+		isSliced = false;
 	}
 	
 	// Update is called once per frame
@@ -19,6 +22,9 @@ public class restartCube : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		timer.GetComponent<Timer> ().Restart ();
+		if (!isSliced && cube.GetComponent<detectSlice> ().sliced) {
+			timer.GetComponent<Timer> ().Restart ();
+			isSliced = true;
+		}
 	}
 }
