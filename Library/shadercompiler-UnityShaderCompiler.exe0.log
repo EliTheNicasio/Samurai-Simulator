@@ -1,2 +1,54 @@
-Base path: C:/Program Files/Unity/Editor/Data
+Base path: C:/Program Files/Unity/Hub/Editor/2017.3.1f1/Editor/Data
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=767 outsize=1358 ok=1
+Cmd: preprocess
+  insize=3183 outsize=321 ok=1
+Cmd: preprocess
+  insize=3064 outsize=412 ok=1
+Cmd: preprocess
+  insize=2611 outsize=295 ok=1
+Cmd: preprocess
+  insize=2709 outsize=392 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1435 outsize=1561 ok=1
+Cmd: preprocess
+  insize=3736 outsize=374 ok=1
+Cmd: preprocess
+  insize=5962 outsize=1841 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3273 outsize=1925 ok=1
+Cmd: preprocess
+  insize=2264 outsize=298 ok=1
+Cmd: preprocess
+  insize=1166 outsize=1056 ok=1
+Cmd: preprocess
+  insize=32277 outsize=1539 ok=1
+Cmd: preprocess
+  insize=2724 outsize=1368 ok=1
+Cmd: preprocess
+  insize=7323 outsize=838 ok=1
+Cmd: preprocess
+  insize=983 outsize=299 ok=1
+Cmd: preprocess
+  insize=6814 outsize=496 ok=1
+Cmd: preprocess
+  insize=1933 outsize=300 ok=1
+Cmd: preprocess
+  insize=10826 outsize=680 ok=1
+Cmd: preprocess
+  insize=4286 outsize=558 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1526 outsize=1533 ok=1
+Cmd: preprocess
+  insize=2235 outsize=1057 ok=1
+Cmd: preprocess
+  insize=1715 outsize=368 ok=1
+Cmd: preprocess
+  insize=3427 outsize=244 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2343 outsize=1341 ok=1
+Cmd: preprocess
+  insize=3208 outsize=1526 ok=1
+Cmd: preprocess
+  insize=1978 outsize=955 ok=1

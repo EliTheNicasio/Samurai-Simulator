@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class startCube : MonoBehaviour {
 
 	public GameObject timer;
+
+	public Text score;
 
 	public AudioClip startSound;
 
@@ -22,5 +25,6 @@ public class startCube : MonoBehaviour {
 	{
 		AudioSource.PlayClipAtPoint (startSound, transform.position);
 		timer.GetComponent<Timer> ().gameStarted = true;
+		score.GetComponent<HighScore> ().score = 0;
 	}
 }
